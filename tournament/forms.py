@@ -15,7 +15,6 @@ class Enroll(forms.ModelForm):
             attrs={
                 'class':'form-control',
                 'minlength': 10,
-                'maxlength': 15,
                 'required': True,
                 'type': 'number',
                 'placeholder':'Whatsapp Number',
@@ -27,7 +26,6 @@ class Enroll(forms.ModelForm):
             attrs={
                 'class':'form-control',
                 'minlength': 10,
-                'maxlength': 15,
                 'required': True,
                 'type': 'number',
                 'placeholder':'Paytm Number',
