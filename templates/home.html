@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PUBG Mobile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style> .costs{color:orangered;}</style>
+</head>
+<body class="img-fluid" style=" background-image: url('{% static 'bg.jpg' %}');
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              position: relative;
+              width: 85%;
+              height: 610px;
+              margin-left: auto;
+              margin-right: auto;
+">
+    <h5 class="costs">Squad Registrations : 200 Rs</h5>
+    <h5 class="costs">Duo Registrations : 100Rs</h5>
+    <h5 class="costs">Solo Registrations : 50Rs</h5>
+    <center>
+            <img id="logo" src="{% static 'logo.png' %}">
+    </center>
+    <div>
+        <div class="modal-dialog text-center ">
+            <div class="col-sm-9 main-section">
+                <div class="modal-content">
+                    <div class="col-12 form-input">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ Form.name }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form.whatsapp }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form.paytm }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form.pubg_uid}}
+                            </div>
+                            <div class="form-group">
+                                {{ Form.pubg_uname}}
+                            </div>
+                            <button class="btn btn-success" id="enroll" type="Submit" value="enroll"> Register</button><br>
+                            <br>
+                        </form>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
