@@ -20,4 +20,5 @@ from tournament import views
 urlpatterns = [
     path('db-admin/', admin.site.urls),
     path(r'',views.tournament, name="tournament"),
+    path('paytm',views.paytm, name="paytm")
 ]
