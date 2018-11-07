@@ -16,6 +16,3 @@ def paytm(request):
                 if form.is_valid():
                         form.save(commit=True)
         return HttpResponseRedirect('http://m.p-y.tm/requestPayment?recipient=7075755633&amount=200&comment=squardtournament')
-
-# def paytm(request):
-#         return HttpResponseRedirect('')

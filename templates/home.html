@@ -88,7 +88,7 @@
                 <div class="col-sm-9 main-section"  >
                     <div class="modal-content">
                         <div class="col-12 form-input  ">
-                            <form method="POST" action="{% url 'paytm' %}" id="dabba">
+                            <form method="POST" action="{% url 'paytm' %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     {{ Form.name }}
@@ -105,7 +105,7 @@
                                 <div class="form-group">
                                     {{ Form.pubg_uname}}
                                 </div>
-                                <button class="btn btn-success" id="enroll" type="submit" value="enroll" onclick="return enrollment() ">
+                                <button class="btn btn-success" id="enroll" type="submit" value="enroll" onclick="return check_numbers() ">
                                     Register
                                 </button>
                                 <!-- <input class="btn btn-success" id="payment" type="submit" value="Payment" onclick= "location.href='http://m.p-y.tm/requestPayment?recipient=7075755633&amount=200&comment=squardtournament';" disabled /> -->
@@ -120,8 +120,25 @@
     </div>
 </body>
 <script>
-    function enrollment(){
-        return swal('Success!', 'We will get back to you in whatsapp!','success');
+    function check_numbers(){
+        var paytm = document.getElementById('paytm');
+        var whatsapp = document.getElementById('whatsapp');
+        if (paytm.value.length!=10){
+            swal("Error!", "Please enter the correct Paytm number", "warning", {
+                button: "Ok",
+            });
+            return false;
+        }
+        else if(whatsapp.value.length!=10){
+            swal("Error!", "Please enter the correct Whatsapp number", "warning", {
+                button: "Ok",
+            });
+            return false;
+        }
+        else{
+            return true;
+        }
+        
     }
 </script>
 </html>
